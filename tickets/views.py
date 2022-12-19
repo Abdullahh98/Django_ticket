@@ -1,9 +1,9 @@
-from Ticket.models import Orders, Tickets,Events
+from tickets.models import Orders, Tickets,Events
 from rest_framework.generics import ListAPIView, UpdateAPIView, CreateAPIView, DestroyAPIView
-from Ticket.serializers import EventsListSerializer,CreateEventsSerializer
-from Ticket.serializers import TicketsListSerializer, OrderListSerializer
+from tickets.serializers import EventsListSerializer,CreateEventsSerializer, EventsUpdateSerializer
+from tickets.serializers import TicketsListSerializer, OrderListSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny, IsAdminUser
-from Ticket.permissions import IsOwner
+from tickets.permissions import IsOwner
 
 
 
@@ -27,7 +27,7 @@ class EventCreateView(CreateAPIView):
 
 class EventUpdateView(UpdateAPIView):
     queryset = Events.objects.all()
-    serializer_class =  CreateEventsSerializer
+    serializer_class =  EventsUpdateSerializer
     lookup_field = 'id'
     lookup_url_kwarg = 'event_id'
     permission_classes = [IsOwner,IsAdminUser]

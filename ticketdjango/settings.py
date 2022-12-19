@@ -31,7 +31,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1","10.0.2.2"]
 
-# WSGI_APPLICATION = 'your_project_name.wsgi.application'
+# WSGI_APPLICATION = 'wsgi.application'
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,9 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Ticket',
-    'auth',
-
+    'tickets',
+    'ticketauth',
     'rest_framework',
     "rest_framework.authtoken",
    

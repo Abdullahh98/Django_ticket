@@ -16,20 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-]
-from django.contrib import admin
-from django.urls import path
-from auth.views import UserLoginAPIView, UserCreateAPIView
-from Ticket.views import EventListView, EventCreateView, EventUpdateView, EventDeleteView
-from Ticket.views import TicketListView, TicketCreateView, TicketUpdateView, TicketDeleteView, OrderListView, OrderCreateView, OrderUpdateView, OrderDeleteView
-from auth.views import UserCreateAPIView, UserLoginAPIView
+
+# from ticketauth.views import UserLoginAPIView, UserCreateAPIView
+from tickets.views import EventListView, EventCreateView, EventUpdateView, EventDeleteView
+from tickets.views import TicketListView, TicketCreateView, TicketUpdateView, TicketDeleteView, OrderListView, OrderCreateView, OrderUpdateView, OrderDeleteView
 from django.conf import settings
 from django.conf.urls.static import static
-
-from rest_framework import routers
-
 
 
 urlpatterns = [
@@ -37,8 +29,8 @@ urlpatterns = [
 
 
     # ----- Authentications URLs -----
-    path('auth/signup/', UserCreateAPIView.as_view() , name="signup"),
-    path('auth/signin/', UserLoginAPIView.as_view() , name="signin"),
+    # path('auth/signup/', UserCreateAPIView.as_view() , name="signup"),
+    # path('auth/signin/', UserLoginAPIView.as_view() , name="signin"),
 
 
     # ----- ticket URLs -----
