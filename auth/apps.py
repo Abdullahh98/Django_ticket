@@ -1,9 +1,8 @@
 from django.apps import AppConfig
 
 
-class TicketConfig(AppConfig):
+class AuthConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'Ticket'
-
+    name = 'auth'
 
 
